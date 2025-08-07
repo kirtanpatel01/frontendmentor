@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/kj_white.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Product preview card</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-brown: hsl(14, 45%, 36%);
+        --color-cream: hsl(30, 38%, 92%);
+        --color-grey: hsl(228, 12%, 48%);
+        --color-black: hsl(212, 21%, 14%);
+        --color-g5: hsl(158, 36%, 37%);
+        --color-g7: hsl(158, 42%, 18%);
+        --font-mont: "Montserrat", sans-serif;
+        --font-fraunces: "Fraunces", serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream min-h-screen flex flex-col justify-center items-center p-3">
+    <div class="sm:flex max-w-xl rounded-lg bg-white shadow-xs">
+      <img
+        class="w-72 rounded-bl-lg rounded-tl-lg hidden sm:flex"
+        src="./images/image-product-desktop.jpg"
+        alt="perfume" />
+      <img
+        class="sm:hidden rounded-tl-lg rounded-tr-lg"
+        src="./images/image-product-mobile.jpg"
+        alt="perfume" />
+      <div class="flex flex-col gap-5 p-6 sm:p-8">
+        <span
+          class="tracking-[10px] text-grey text-[11px] font-semibold font-mont uppercase"
+          >Perfume</span
+        >
+
+        <h1 class="text-2xl sm:text-3xl font-bold font-fraunces">
+          Gabrielle Essence Eau De Parfum
+        </h1>
+
+        <p class="text-grey text-sm font-mont">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+
+        <div class="space-x-4 flex items-center">
+          <span class="text-3xl font-bold text-g5 font-fraunces">$149.99</span>
+          <span class="line-through font-mont text-grey text-xs">$169.99</span>
+        </div>
+
+        <button
+          class="w-full bg-g5 hover:bg-g7 cursor-pointer text-white p-3 flex justify-center gap-2 rounded-md">
+          <img
+            src="./images/icon-cart.svg"
+            alt="cart-icon" />
+          <span class="font-mont font-semibold text-xs">Add to Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="text-[11px] my-8">
+      Challenge by
+      <a
+        class="text-blue-800 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-800 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </div>
+  </body>
+</html>

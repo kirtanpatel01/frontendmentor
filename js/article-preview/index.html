@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/kj_white.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <title>Article preview component</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-manrope: "Manrope";
+        --color-dark-grayish-blue: hsl(217, 19%, 35%);
+        --color-de-grayish-blue: hsl(214, 17%, 51%);
+        --color-grayish-blue: hsl(212, 23%, 69%);
+        --color-light-grayish-blue: hsl(210, 46%, 95%);
+      }
+      @layer utilities {
+        .fade-scale {
+          @apply transition-all duration-300 ease-in-out opacity-0 scale-95;
+        }
+        .fade-scale-show {
+          @apply opacity-100 scale-100;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-manrope flex flex-col justify-center items-center min-h-screen bg-light-grayish-blue p-6">
+    <div
+      class="max-w-sm sm:max-w-3xl flex flex-col sm:flex-row rounded-lg shadow-xl shadow-grayish-blue/20">
+      <img
+        class="sm:w-80 object-cover sm:rounded-bl-lg rounded-tr-lg sm:rounded-tr-none rounded-tl-lg"
+        src="./images/drawers.jpg"
+        alt="drawers" />
+      <div
+        class="bg-white p-8 flex flex-col gap-5 rounded-br-lg rounded-bl-lg sm:rounded-bl-none sm:rounded-tr-lg">
+        <h3 class="text-xl sm:text-2xl font-bold text-dark-grayish-blue">
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h3>
+
+        <p class="text-sm text-de-grayish-blue font-medium">
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+
+        <div class="w-full text-sm flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <img
+              class="size-10 rounded-full"
+              src="./images/avatar-michelle.jpg"
+              alt="michelle" />
+            <div class="flex flex-col">
+              <span class="font-semibold text-dark-grayish-blue"
+                >Michelle Appleton</span
+              >
+              <span class="text-xs text-grayish-blue">28 Jun 2020</span>
+            </div>
+          </div>
+
+          <div class="relative inline-block">
+            <div
+              id="tooltip"
+              class="absolute bottom-16 -left-14 sm:left-1/2 -translate-x-1/2 w-52 rounded-lg bg-dark-grayish-blue px-6 py-4 flex items-center justify-between shadow-lg text-white hidden fade-scale">
+              <span class="tracking-[0.4em] text-xs text-grayish-blue"
+                >SHARE</span
+              >
+              <img
+                class="cursor-pointer transition hover:scale-110"
+                src="./images/icon-facebook.svg"
+                alt="facebook" />
+              <img
+                class="cursor-pointer transition hover:scale-110"
+                src="./images/icon-twitter.svg"
+                alt="twitter" />
+              <img
+                class="cursor-pointer transition hover:scale-110"
+                src="./images/icon-pinterest.svg"
+                alt="pinterest" />
+              <div
+                class="absolute left-44 sm:left-1/2 top-11 sm:top-10 -translate-x-1/2 w-4 h-4 bg-dark-grayish-blue rotate-45"></div>
+            </div>
+
+            <button
+              id="share"
+              class="relative z-10 flex justify-center items-center w-8 h-8 rounded-full bg-slate-200 hover:bg-dark-grayish-blue transition">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="13"
+                class="w-4 h-4 text-de-grayish-blue transition-colors duration-300 hover:text-light-grayish-blue"
+                fill="currentColor"
+                viewBox="0 0 15 13">
+                <path
+                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-[11px] mt-16">
+      Challenge by
+      <a
+        class="text-blue-800 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-800 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+
+    <script>
+      const shareBtn = document.getElementById("share");
+      const tooltip = document.getElementById("tooltip");
+
+      shareBtn.addEventListener("click", () => {
+        tooltip.classList.toggle("hidden");
+        tooltip.classList.toggle("fade-scale-show");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Accordion</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Work Sans Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @theme {
+        --color-p1: hsl(275, 100%, 97%);
+        --color-p6: hsl(292, 16%, 49%);
+        --color-p95: hsl(292, 42%, 14%);
+        --font-work: "Work Sans", sans-serif;
+      }
+
+      /* Icon toggle with no JS */
+      details summary .icon-minus {
+        display: none;
+      }
+
+      details[open] summary .icon-plus {
+        display: none;
+      }
+
+      details[open] summary .icon-minus {
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body class="bg-p1 min-h-screen font-sans" style="font-family: 'Work Sans', sans-serif">
+    <!-- Background Images -->
+    <img
+      class="w-full absolute top-0 z-0 hidden min-[425px]:block"
+      src="./assets/images/background-pattern-desktop.svg"
+      alt="bg" />
+    <img
+      class="w-full absolute top-0 z-0 block min-[425px]:hidden"
+      src="./assets/images/background-pattern-mobile.svg"
+      alt="bg" />
+
+    <main class="z-10 relative max-w-xl mx-auto mt-28 rounded-xl bg-white p-8 shadow-lg m-6">
+      <h1 class="text-4xl flex items-center gap-4 font-bold text-p95 mb-6">
+        <img class="size-8" src="./assets/images/icon-star.svg" alt="star" />
+        FAQs
+      </h1>
+
+      <!-- FAQ Items -->
+      <div class="space-y-4">
+        <details class="border-b border-p1 py-4 group">
+          <summary class="flex justify-between items-center cursor-pointer text-p95 font-bold hover:text-purple-700">
+            <span>What is Frontend Mentor, and how will it help me?</span>
+            <span>
+              <img class="icon-plus" src="./assets/images/icon-plus.svg" alt="expand" />
+              <img class="icon-minus" src="./assets/images/icon-minus.svg" alt="collapse" />
+            </span>
+          </summary>
+          <p class="mt-2 text-p6">
+            Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript.
+          </p>
+        </details>
+
+        <details class="border-b border-p1 py-4 group">
+          <summary class="flex justify-between items-center cursor-pointer text-p95 font-bold hover:text-purple-700">
+            <span>Is Frontend Mentor free?</span>
+            <span>
+              <img class="icon-plus" src="./assets/images/icon-plus.svg" alt="expand" />
+              <img class="icon-minus" src="./assets/images/icon-minus.svg" alt="collapse" />
+            </span>
+          </summary>
+          <p class="mt-2 text-p6">
+            Yes, Frontend Mentor offers both free and premium coding challenges for all levels.
+          </p>
+        </details>
+
+        <details class="border-b border-p1 py-4 group">
+          <summary class="flex justify-between items-center cursor-pointer text-p95 font-bold hover:text-purple-700">
+            <span>Can I use Frontend Mentor projects in my portfolio?</span>
+            <span>
+              <img class="icon-plus" src="./assets/images/icon-plus.svg" alt="expand" />
+              <img class="icon-minus" src="./assets/images/icon-minus.svg" alt="collapse" />
+            </span>
+          </summary>
+          <p class="mt-2 text-p6">
+            Yes, it's a great way to showcase your work to potential employers by adding finished challenges to your portfolio.
+          </p>
+        </details>
+
+        <details class="border-b border-p1 py-4 group">
+          <summary class="flex justify-between items-center cursor-pointer text-p95 font-bold hover:text-purple-700">
+            <span>How can I get help if I'm stuck on a Frontend Mentor challenge?</span>
+            <span>
+              <img class="icon-plus" src="./assets/images/icon-plus.svg" alt="expand" />
+              <img class="icon-minus" src="./assets/images/icon-minus.svg" alt="collapse" />
+            </span>
+          </summary>
+          <p class="mt-2 text-p6">
+            You can join the Frontend Mentor Discord community, where other devs help each other and share feedback.
+          </p>
+        </details>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-[11px] text-center mt-6">
+      Challenge by
+      <a class="text-blue-500 underline" href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a class="text-blue-500 underline" href="#">kjpatel</a>.
+    </footer>
+  </body>
+</html>

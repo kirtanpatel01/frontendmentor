@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/kj_white.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      defer
+      src="./script.js"></script>
+
+    <title>Time tracking dashboard</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-rubik: "Rubik", sans-serif;
+
+        --color-orange: hsl(15, 100%, 70%);
+        --color-blue: hsl(195, 74%, 62%);
+        --color-pink: hsl(348, 100%, 68%);
+        --color-green: hsl(145, 58%, 55%);
+        --color-yellow: hsl(43, 84%, 65%);
+
+        --color-purple-500: hsl(235, 45%, 61%);
+        --color-purple-600: hsl(246, 80%, 60%);
+        --color-purple-700: hsl(264, 64%, 52%);
+        --color-navy-200: hsl(236, 100%, 87%);
+        --color-navy-900: hsl(235, 46%, 20%);
+        --color-navy-950: hsl(226, 43%, 10%);
+        --color-navy: hsl(236, 45%, 29%);
+
+        --breakpoint-xs: 450px;
+      }
+
+      .card {
+        @apply w-full sm:w-64 relative overflow-hidden rounded-xl flex justify-between;
+      }
+      .card-img {
+        @apply absolute -top-1 right-3 size-12 z-0;
+      }
+      .card-content {
+        @apply w-full bg-navy-900 hover:bg-navy cursor-pointer   p-5 pb-2 lg:p-6 rounded-xl mt-8 lg:space-y-4 z-10;
+      }
+      .card-header {
+        @apply w-full flex justify-between;
+      }
+      .card-title {
+        @apply font-medium lg:font-semibold;
+      }
+      .card-data {
+        @apply space-y-2 flex lg:flex-col items-center lg:items-start justify-between;
+      }
+      .current-data {
+        @apply text-3xl lg:text-5xl font-light;
+      }
+      .last-data {
+        @apply text-sm opacity-75;
+      }
+    </style>
+  </head>
+  <body
+    class="font-rubik bg-navy-950 text-white flex flex-col justify-center items-center min-h-screen p-6">
+    <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+      <div class="h-fit w-full sm:w-64 bg-navy-900 rounded-xl">
+        <div class="bg-purple-600 rounded-xl p-5 lg:p-6 flex lg:flex-col space-x-4">
+          <img
+            src="./images/image-jeremy.png"
+            alt="Jeremy"
+            class="size-14 lg:size-16 lg:mb-8 border-2 border-white rounded-full" />
+          <div>
+            <span class="text-xs opacity-75">Report for</span>
+            <h1 class="lg:w-16 text-lg lg:text-4xl lg:mb-12 font-extralight">Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="p-4 lg:p-6 flex lg:flex-col items-start justify-around gap-4 text-sm">
+          <button
+            id="daily"
+            class="opacity-50 hover:opacity-75 cursor-pointer">
+            Daily
+          </button>
+          <button
+            id="weekly"
+            class="opacity-50 hover:opacity-75 cursor-pointer">
+            Weekly
+          </button>
+          <button
+            id="monthly"
+            class="opacity-50 hover:opacity-75 cursor-pointer">
+            Monthly
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="cards-container"
+        class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6"></div>
+    </div>
+
+    <footer class="text-[11px] lg:absolute bottom-4 mt-16">
+      Challenge by
+      <a
+        class="text-blue-500 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-500 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+  </body>
+</html>

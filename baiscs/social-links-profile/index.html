@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/kj_white.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Social links profile</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-yellow: hsl(75, 94%, 57%);
+        --font-inter: "Inter", sans-serif;
+      }
+
+      .link {
+        @apply bg-neutral-700 w-full p-3 rounded-lg text-center text-sm font-semibold;
+      }
+    </style>
+  </head>
+  <body
+    class="font-inter bg-neutral-900 text-white flex justify-center items-center min-h-screen">
+    <div
+      class="w-96 rounded-xl flex flex-col items-center gap-6 bg-neutral-800 p-10 shadow-lg">
+      <img
+        class="rounded-full size-16"
+        src="./assets/images/cat.jpg"
+        alt="avatar" />
+
+      <div class="space-y-2 flex flex-col text-center">
+        <span class="text-xl font-bold">Kirtan Patel</span>
+        <span class="text-yellow font-semibold text-xs">Gujarat, India</span>
+      </div>
+
+      <span class="text-xs opacity-75">"Full Stack Developer"</span>
+
+      <div class="w-full space-y-4 flex flex-col">
+        <a
+          class="link"
+          target="_blank"
+          href="https://github.com/kirtanpatel01"
+          >GitHub</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.frontendmentor.io/profile/kirtanpatel01"
+          >Frontend Mentor</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.linkedin.com/in/kirtanpatel01"
+          >LinkedIn</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          href="https://x.com/_k_j_patel_"
+          >X</a
+        >
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.instagram.com/kjpatel.dev"
+          >Instagram</a
+        >
+      </div>
+    </div>
+
+    <div class="absolute bottom-4 text-[11px]">
+      Challenge by
+      <a
+        class="text-blue-800 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-800 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </div>
+  </body>
+</html>

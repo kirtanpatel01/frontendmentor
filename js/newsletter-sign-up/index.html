@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/kj_white.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Newsletter Signup Form</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-roboto: "Roboto", sans-serif;
+        --color-b8: hsl(234, 29%, 20%);
+        --color-b7: hsl(235, 18%, 26%);
+        --color-g: hsl(0, 0%, 58%);
+        --color-r: hsl(4, 100%, 67%);
+        --breakpoint-xs: 450px;
+      }
+
+      .gradient {
+        @apply hover:bg-linear-to-r hover:from-r hover:to-orange-400 hover:shadow-xl hover:shadow-r/50 cursor-pointer;
+      }
+    </style>
+  </head>
+  <body
+    class="font-roboto flex flex-col justify-center items-center min-h-screen bg-white xs:bg-b7 text-b8 xs:p-8">
+    <!-- Sign-up form start -->
+    <div
+      id="signup-form"
+      class="max-w-md md:max-w-3xl rounded-3xl bg-white flex flex-col-reverse md:flex-row gap-4 xs:p-4 xs:mt-8">
+      <div class="flex flex-col gap-4 p-6 justify-center">
+        <h1 class="text-4xl font-extrabold">Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+        <ul class="flex flex-col gap-2">
+          <li class="flex items-center gap-2">
+            <img
+              class="size-4"
+              src="./assets/images/icon-list.svg"
+              alt="list" />
+            <span>Product discovery and building what matters</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              class="size-4"
+              src="./assets/images/icon-list.svg"
+              alt="list" />
+            <span>Measuring to ensure updates are a success</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              class="size-4"
+              src="./assets/images/icon-list.svg"
+              alt="list" />
+            <span>And much more!</span>
+          </li>
+        </ul>
+
+        <form
+          novalidate
+          id="submit-form"
+          class="space-y-6">
+          <div>
+            <label
+              for="email-input"
+              class="text-xs font-bold w-full flex justify-between">
+              <span>Email address</span>
+              <span
+                id="error-msg"
+                class="hidden text-r"
+                >Valid email required</span
+              >
+            </label>
+            <input
+              class="w-full px-4 py-3 rounded-md border border-g"
+              type="email"
+              id="email-input"
+              name="email"
+              placeholder="email@company.com" />
+          </div>
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full rounded-md p-3 bg-b8 text-white font-medium gradient">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+
+      <img
+        class="rounded-lg sm:w-72 hidden md:block"
+        src="./assets/images/illustration-sign-up-desktop.svg"
+        alt="signup-illustration" />
+      <img
+        class="hidden sm:block md:hidden"
+        src="./assets/images/illustration-sign-up-tablet.svg"
+        alt="illustration-tablet" />
+      <img
+        class="sm:hidden"
+        src="./assets/images/illustration-sign-up-mobile.svg"
+        alt="illustration-mobile" />
+    </div>
+
+    <!-- Success message start -->
+    <div
+      id="success"
+      class="hidden h-screen xs:h-fit flex flex-col justify-between max-w-96 mx-auto p-4 xs:p-10 xs:bg-white xs:shadow-xl xs:rounded-3xl">
+      <div class="flex-grow flex flex-col justify-center space-y-8 xs:space-y-6">
+        <img
+          class="size-16 xs:size-12"
+          src="./assets/images/icon-success.svg"
+          alt="success" />
+        <h1 class="text-4xl font-bold">Thanks for subscribing!</h1>
+        <p class="xs:text-sm">
+          A confirmation email has been sent to
+          <span id="success-email" class="font-semibold">ash@loremcompany.com</span>. Please open
+          it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        id="dismiss-btn"
+        class="mb-8 xs:mb-0 xs:mt-6 gradient w-full bg-b8 rounded-md p-3 font-semibold text-white">
+        Dismiss message
+      </button>
+    </div>
+
+    <footer class="text-[11px] mb-4 xs:mt-16 xs:text-white">
+      Challenge by
+      <a
+        class="text-blue-500 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-500 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+
+    <script>
+      const signupForm = document.getElementById("signup-form");
+      const submitForm = document.getElementById("submit-form");
+      const emailInput = document.getElementById("email-input");
+      const dismissBtn = document.getElementById("dismiss-btn");
+      const errorLabel = document.getElementById("error-msg");
+      const success = document.getElementById("success");
+      const successEmail = document.getElementById("success-email")
+
+      submitForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        const email = data.email;
+
+        if (!email || !email.includes("@") || !email.includes(".")) {
+          errorLabel.classList.remove("hidden");
+          emailInput.style.borderColor = "red";
+          emailInput.style.color = "red";
+        } else {
+          errorLabel.classList.add("hidden");
+          emailInput.style.borderColor = "gray";
+          emailInput.style.color = "black";
+          emailInput.value = "";
+          signupForm.classList.add("hidden");
+          success.classList.remove("hidden");
+          successEmail.innerText = email
+
+          console.log(`Your email has been subscribed now. Thank you ${email}`);
+        }
+      });
+
+      dismissBtn.addEventListener("click", () => {
+        signupForm.classList.remove("hidden");
+        success.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

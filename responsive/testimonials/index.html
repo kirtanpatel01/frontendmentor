@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/kj_white.ico" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Testimonials Grid Section</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-g1: hsl(214, 17%, 92%);
+        --color-g2: hsl(0, 0%, 81%);
+        --color-g4: hsl(224, 10%, 45%);
+        --color-g5: hsl(217, 19%, 35%);
+        --color-dark-blue: hsl(219, 29%, 14%);
+        --color-black: hsl(0, 0%, 7%);
+        --color-purple-50: hsl(260, 100%, 95%);
+        --color-purple-300: hsl(264, 82%, 80%);
+        --color-purple-500: hsl(263, 55%, 52%);
+        --font-barlow: "Barlow Semi Condensed"
+      }
+
+      .card {
+        @apply z-20 space-y-4 rounded-lg p-7 space-y-4 shadow-[48px_48px_36px_rgba(25,33,46,0.22)];
+      }
+
+      .profile {
+        @apply flex items-center gap-4;
+      }
+
+      .profile > img {
+        @apply rounded-full size-14;
+      }
+
+      .profile-title {
+        @apply flex flex-col;
+      }
+
+      .name {
+        @apply font-semibold;
+      }
+
+      .achievement {
+        @apply text-2xl font-semibold;
+      }
+    </style>
+  </head>
+  <body class="font-barlow bg-neutral-50 flex flex-col justify-center items-center">
+    <div class="mb-4 sm:my-28 max-w-7xl grid-cols-1 sm:grid grid-cols-[1fr_.31fr] space-y-4 p-4">
+      <div class="flex flex-col gap-4 sm:gap-6">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div class="relative card grow bg-purple-500 text-white">
+            <img class="absolute right-10 sm:right-20 top-0 size-24 sm:size-34 z-0" src="./images/bg-pattern-quotation.svg" alt="quotation">
+            <div class="profile">
+              <img
+                class="border-[3px] border-purple-300"
+                src="./images/image-daniel.jpg"
+                alt="daniel" />
+              <div class="profile-title">
+                <span class="name">Daniel Clifford</span>
+                <span class="post">Verified Graduate</span>
+              </div>
+            </div>
+            <p class="achievement relative z-10">
+              I received a job offer mid-course, and the subjects I learned were
+              current, if not more so, in the company I joined. I honestly feel
+              I got every penny’s worth.
+            </p>
+            <p class="quote">
+              “ I was an EMT for many years before I joined the bootcamp. I’ve
+              been looking to make a transition and have heard some people who
+              had an amazing experience here. I signed up for the free intro
+              course and found it incredibly fun! I enrolled shortly thereafter.
+              The next 12 weeks was the best - and most grueling - time of my
+              life. Since completing the course, I’ve successfully switched
+              careers, working as a Software Engineer at a VR startup. ”
+            </p>
+          </div>
+
+          <div class="card grow-0 bg-g5 text-g1">
+            <div class="profile">
+              <img
+                src="./images/image-jonathan.jpg"
+                alt="jonathan" />
+              <div class="profile-title">
+                <span class="name">Jonathan Walters</span>
+                <span class="post">Verified Graduate</span>
+              </div>
+            </div>
+            <p class="achievement">
+              The team was very supportive and kept me motivated
+            </p>
+            <p class="quote">
+              “ I started as a total newbie with virtually no coding skills. I
+              now work as a mobile engineer for a big company. This was one of
+              the best investments I’ve made in myself. ”
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div class="card bg-white text-g5">
+            <div class="profile">
+              <img
+                src="./images/image-jeanette.jpg"
+                alt="jeanette" />
+              <div class="profile-title">
+                <span class="name">Jeanette Harmon</span>
+                <span class="post"> Verified Graduate </span>
+              </div>
+            </div>
+            <p class="achievement">
+              An overall wonderful and rewarding experience
+            </p>
+            <p class="quote">
+              “ Thank you for the wonderful experience! I now have a job I
+              really enjoy, and make a good living while doing something I love.
+              ”
+            </p>
+          </div>
+
+          <div class="card bg-dark-blue text-g2">
+            <div class="profile">
+              <img
+                class="border-[3px] border-purple-300"
+                src="./images/image-patrick.jpg"
+                alt="patrick" />
+              <div class="profile-title">
+                <span class="name">Patrick Abrams</span>
+                <span class="post">Verified Graduate</span>
+              </div>
+            </div>
+            <p class="achievement">
+              Awesome teaching support from TAs who did the bootcamp themselves.
+              Getting guidance from them and learning from their experiences was
+              easy.
+            </p>
+            <p class="quote">
+              “ The staff seem genuinely concerned about my progress which I
+              find really refreshing. The program gave me the confidence
+              necessary to be able to go out in the world and present myself as
+              a capable junior developer. The standard is above the rest. You
+              will get the personal attention you need from an incredible
+              community of smart and amazing people. ”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-white text-g5">
+        <div class="profile">
+          <img
+            src="./images/image-kira.jpg"
+            alt="kira" />
+          <div class="profile-title">
+            <span class="name">Kira Whittle</span>
+            <span class="post">Verified Graduate</span>
+          </div>
+        </div>
+        <p class="achievement">
+          Such a life-changing experience. Highly recommended!
+        </p>
+        <p class="quote">
+          “ Before joining the bootcamp, I’ve never written a line of code. I
+          needed some structure from professionals who can help me learn
+          programming step by step. I was encouraged to enroll by a former
+          student of theirs who can only say wonderful things about the program.
+          The entire curriculum and staff did not disappoint. They were very
+          hands-on and I never had to wait long for assistance. The agile team
+          project, in particular, was outstanding. It took my learning to the
+          next level in a way that no tutorial could ever have. In fact, I’ve
+          often referred to it during interviews as an example of my developent
+          experience. It certainly helped me land a job as a full-stack
+          developer after receiving multiple offers. 100% recommend! ”
+        </p>
+      </div>
+    </div>
+
+    <footer class="text-[11px] mb-4">
+      Challenge by
+      <a
+        class="text-blue-800 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-800 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+  </body>
+</html>

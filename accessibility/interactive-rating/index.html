@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      defer
+      src="./script.js"></script>
+
+    <title>Interactive rating component</title>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-o: hsl(25, 97%, 53%);
+        --color-g5: hsl(217, 12%, 63%);
+        --font-overpass: "Overpass", sans-serif;
+      }
+
+      .card {
+        @apply max-w-96 bg-linear-to-b from-slate-800/70 to-slate-900/50 rounded-3xl p-6 space-y-6 shadow-md;
+      }
+      .head-1 {
+        @apply text-3xl font-bold;
+      }
+      .desc {
+        @apply text-g5;
+      }
+      .btn {
+        @apply rounded-full bg-g5/20 p-2 size-10 flex justify-center items-center hover:bg-white cursor-pointer hover:text-black font-bold text-xl duration-300 transition-colors;
+      }
+      .active {
+        @apply bg-white text-black
+      }
+    </style>
+  </head>
+  <body
+    class="bg-neutral-950 text-white min-h-screen flex flex-col justify-center items-center p-6">
+    <div id="rating-card" class="card">
+      <img
+        class="p-2 rounded-full size-8 bg-g5/20"
+        src="./images/icon-star.svg"
+        alt="star" />
+      <h1 class="head-1">How did we do?</h1>
+      <p class="desc">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <ul
+        id="btn-container"
+        class="flex justify-around"></ul>
+      <button
+        id="submit-btn"
+        class="w-full bg-o rounded-full uppercase text-g95 p-2 font-semibold cursor-pointer tracking-widest hover:bg-white text-black duration-300 transition-colors mt-2 m-0">
+        Submit
+      </button>
+    </div>
+
+    <div id="success-card" class="hidden card flex flex-col items-center justify-center">
+      <img
+        class="h-24 w-33"
+        src="./images/illustration-thank-you.svg"
+        alt="thank-you" />
+      <span class="tracking-wider w-fit px-3 py-1 rounded-full bg-g5/15 text-o font-medium">
+        You selected <span id="user-rating"></span> out of 5
+      </span>
+      <h1 class="head-1">Thank you!</h1>
+      <p class="desc text-center">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don&apos;t hesitate to get in touch!
+      </p>
+      <button onclick="back()" class="text-sm hover:text-o font-semibold underline decoration-2 tracking-widest uppercase cursor-pointer underline-offset-4">Back</button>
+    </div>
+
+    <footer class="text-[11px] absolute bottom-4">
+      Challenge by
+      <a
+        class="text-blue-500 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-500 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+  </body>
+</html>

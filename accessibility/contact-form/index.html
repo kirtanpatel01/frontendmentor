@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/kj_white.ico" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Contact form</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-green-200: hsl(148, 38%, 91%);
+        --color-green-600: hsl(169, 82%, 27%);
+        --color-red: hsl(0, 66%, 54%);
+        --color-grey-500: hsl(186, 15%, 59%);
+        --color-grey-900: hsl(187, 24%, 22%);
+        --font-karla: "Karla";
+      }
+
+      .cont {
+        @apply w-full flex flex-col gap-1;
+      }
+      label {
+        @apply text-sm font-semibold cursor-pointer;
+      }
+      .border {
+        @apply rounded-md px-4 py-2 w-full border border-slate-300 hover:border-green-600 cursor-pointer focus:outline-green-600;
+      }
+      .error {
+        @apply text-red text-sm font-medium outline-red;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-green-200 font-karla flex justify-center items-center min-h-screen">
+    <form
+      class="text-grey-900 max-w-xl w-full rounded-2xl bg-white shadow-md p-8 space-y-6">
+      <h1 class="font-bold text-3xl">Contact Us</h1>
+
+      <div class="flex gap-2">
+        <div class="cont">
+          <label for="firstName">
+            <span>First Name </span>
+            <span class="text-green-600">*</span>
+          </label>
+          <input
+            class="border"
+            type="text"
+            placeholder="Enter your first name" />
+          <span class="error">This field is required</span>
+        </div>
+
+        <div class="cont">
+          <label for="lastName">
+            <span>Last Name</span>
+            <span class="text-green-600">*</span>
+          </label>
+          <input
+            type="text"
+            class="border"
+            placeholder="Enter your last name" />
+          <span class="error">This field is required</span>
+        </div>
+      </div>
+
+      <div class="cont">
+        <label for="email">
+          <span>Email Address</span>
+          <span class="text-green-600">*</span>
+        </label>
+        <input
+          type="text"
+          class="border"
+          placeholder="Enter your email address" />
+        <span class="error">Please enter a valid email address</span>
+        <span class="error">This field is required</span>
+      </div>
+
+      <div class="cont">
+        <label for="queryType">
+          <span>Query Type</span>
+          <span class="text-green-600">*</span>
+        </label>
+        <div class="w-full grid grid-cols-2 gap-2">
+          <label
+            for="general"
+            class="border flex gap-2 has-checked:bg-green-200">
+            <input
+              id="general"
+              type="radio"
+              name="queryType" />
+            <span class="text-base">General Enquiry</span>
+          </label>
+          <label
+            for="support"
+            class="border w-fit flex gap-2 has-checked:bg-green-200 checked:border-green-900">
+            <input
+              id="support"
+              type="radio"
+              name="queryType"
+              class="" />
+            <span class="text-base">Support Request</span>
+          </label>
+        </div>
+        <span class="error">Please select a query type</span>
+      </div>
+
+      <div class="cont">
+        <label for="msg">
+          <span>Message</span>
+          <span class="text-green-600">*</span>
+        </label>
+        <textarea
+          class="border"
+          name=""
+          id=""></textarea>
+        <span class="error">This field is required</span>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="flex">
+          <input
+            class="cursor-pointer"
+            type="checkbox"
+            id="consent"
+            name="consent" />
+          <label
+            class="cursor-pointer pl-3"
+            for="consent">
+            <span class="opacity-65"
+              >I consent to being contacted by the team</span
+            >
+            <span class="text-green-600">*</span>
+          </label>
+        </div>
+        <span class="error"
+          >To submit this form, please consent to being contacted</span
+        >
+      </div>
+
+      <button
+        class="w-full text-center font-bold text-white bg-green-600/90 hover:bg-green-600 px-4 py-2 rounded-md cursor-pointer">
+        Submit
+      </button>
+    </form>
+
+    <div class="hidden">
+      <span>Message Sent!</span>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+    <footer class="text-[11px] absolute bottom-4">
+      Challenge by
+      <a
+        class="text-blue-500 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="text-blue-500 underline"
+        href="#"
+        >kjpatel</a
+      >.
+    </footer>
+  </body>
+</html>

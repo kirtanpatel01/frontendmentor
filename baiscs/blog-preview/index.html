@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/kj_white.ico" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Blog Preview Card</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: hsl(47, 88%, 63%);
+        --font-figtree: "Figtree", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="font-figtree flex justify-center items-center min-h-screen bg-primary text-gray-950">
+    <div class="mx-6 flex flex-col gap-6 w-96 p-6 rounded-2xl border border-black bg-white shadow-[10px_10px_0px_rgba(0,0,0,1)]">
+      <img src="./assets/images/illustration-article.svg" alt="cover" class="rounded-xl">
+
+      <span class="w-fit font-bold bg-primary px-2 py-1 rounded-md">Learning</span>
+
+      <span class="text-sm">Published 21 Dec 2023</span>
+
+      <h1 class="font-extrabold text-2xl cursor-pointer hover:text-primary">HTML & CSS foundations</h1>
+
+      <p class="text-gray-500">
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
+
+      <div class="flex items-center gap-2">
+        <img
+          src="./assets/images/image-avatar.webp"
+          alt="avatar" 
+          class="size-10"  
+        />
+        <span class="font-bold">Greg Hooper</span>
+      </div>
+    </div>
+    <div class="absolute bottom-4 text-[11px]">
+      Challenge by
+      <a
+        class="text-blue-800 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a class="text-blue-800 underline" href="#">kjpatel</a>.
+    </div>
+  </body>
+</html>
